@@ -54,15 +54,15 @@ logs/
 # Exclude inbox and archive directories (including symlinks)
 # Should be commented out i.e. included in the boilerplate but **usually not** in the project
 **/inbox
-**/inbox/**
+**/inbox/
 **/archive
-**/archive/**
+**/archive/
 **/archives
-**/archives/**
+**/archives/
 **/archived
-**/archived/**
+**/archived/
 **/trash
-**/trash/**
+**/trash/
 
 # repomix temp files
 .repomix*
@@ -73,4 +73,5 @@ logs/
 
 # Memory Bank 
 # Should be commented out i.e. included in the boilerplate but **usually not** in the project
+# memory-bank
 # memory-bank/

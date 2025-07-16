@@ -1,14 +1,22 @@
-Script Execution
+Core Privatize Folders
 ========================================================================
-- Asking AI: What is the capital of Belgium?
-No model specified, using default model for perplexity: sonar-pro
-[PerplexityProvider] Token usage set: 23 prompt + 16 completion = 39 total
-[Telemetry] Updating command state with: {
-  promptTokens: 23,
-  completionTokens: 16,
-  provider: 'perplexity',
-  model: 'sonar-pro'
-}
-The capital of Belgium is **Brussels**[1][2][3].
+Source Public Repo: /[path/to/main/repo]/Projects/Digital Life Security/Views/Public Repositories/Sync Drives/dls-sync-drives
+Target Private Dir: /[path/to/main/repo]/Projects/Digital Life Security/Views/Public Repositories/Sync Drives/private
+Using config:       /[path/to/main/repo]/Core/Controllers/Methods/Operations/Scripts/Repository Boilerplate/Privatize Folders/core-privatize-folders/scripts/default.config
 ========================================================================
-🏁 Script logic finished.
+- Processing and symlinking folders
+[MOVING]       .cursor -> ../private/.cursor                 ... SUCCESS
+[SYMLINKING]   .cursor -> ../private/.cursor                 ... SUCCESS
+[CREATING]     .specstory -> ../private/.specstory           ... SUCCESS
+[SYMLINKING]   .specstory -> ../private/.specstory           ... SUCCESS
+[MOVING]       inbox -> ../private/inbox                     ... SUCCESS
+[SYMLINKING]   inbox -> ../private/inbox                     ... SUCCESS
+[MOVING]       archives -> ../private/archives               ... SUCCESS
+[SYMLINKING]   archives -> ../private/archives               ... SUCCESS
+[CREATING]     memory-bank -> ../private/memory-bank         ... SUCCESS
+[SYMLINKING]   memory-bank -> ../private/memory-bank         ... SUCCESS
+- Updating .gitignore
+[GITIGNORE]    Updated successfully                          ... SUCCESS
+========================================================================
+🏁 Folders privatized successfully.
+========================================================================
