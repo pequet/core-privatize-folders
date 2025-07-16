@@ -31,6 +31,22 @@ Maintain this as a running history of the project. Add entries for any significa
 
 ## Log Entries
 
+*   **Date:** 2024-07-16
+*   **Author(s):** Benjamin Pequet
+*   **Type:** Task
+*   **Summary:** Established project definition and updated core documentation based on the initial proposal.
+*   **Details:**
+    *   Analyzed the proposal for `privatize-folders.sh` (`inbox/2024-07-16-0033_proposal-for-privatize-folders-script.md`) and its surrounding context.
+    *   Rewrote the main `README.md` to accurately reflect the script's purpose, usage, and workflow.
+    *   Updated `memory-bank/active-context.md` to set the current focus and next steps.
+    *   Began the process of populating the entire `memory-bank/` with project-specific information.
+*   **Outcome:**
+    *   The project has a clear, documented foundation. The `README.md` and `active-context.md` are now tailored to this project, replacing the generic boilerplate content.
+*   **Relevant Files/Links:**
+    *   `README.md`
+    *   `memory-bank/active-context.md`
+    *   `inbox/2024-07-16-0033_proposal-for-privatize-folders-script.md`
+
 *   **Date:** 2025-06-20
 *   **Author(s):** System
 *   **Type:** Milestone

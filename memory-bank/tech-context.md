@@ -10,100 +10,58 @@ summary: Technologies, setup, and technical constraints of the project.
 ## 1. Technologies Used
 List significant technologies, frameworks, libraries, tools.
 
-* [Enter technologies here]
-
-*   **Example: Project A**
-    *   **IDE:**
-        *   Cursor IDE
-    *   **AI Tools:**
-        *   vibe-tools
-        *   SpecStory
-    *   **Languages:**
-        *   Markdown
-        *   Bash
-        *   JSON
-    *   **Version Control:**
-        *   Git
-*   **Example: Project B**
-    *   **Language:** Pine Script v5
-    *   **Platform:** TradingView
-    *   **Version Control:** Git
-    *   **Documentation:** Markdown
+*   **Language:**
+    *   Bash
+*   **Core Tools:**
+    *   Standard Unix/Linux command-line utilities (`mv`, `ln`, `mkdir`, `sed`, `grep`, `find`, etc.).
+*   **Version Control:**
+    *   Git
 
 ## 2. Development Setup & Environment
 How to set up the dev environment.
 
-* [Enter development setup and environment here]
-
-*   **Example: Project A**
-    *   **Prerequisites:**
-        *   Cursor IDE installed and configured.
-        *   vibe-tools installed globally (`npm install -g vibe-tools`).
-        *   API keys configured for AI providers (e.g., OpenAI, Gemini).
-        *   Git installed and configured.
-    *   **Setup Steps:**
-        1.  Clone the repository from GitHub.
-        2.  Install the required dependencies (if any).
-        3.  Configure API keys in `~/.vibe-tools/.env`.
-        4.  Start the Cursor IDE and open the project directory.
-        5.  Review the `README.md` file for further instructions.
-    *   **Example: Project B**
-        *   **Prerequisites:** A TradingView account (Pro account recommended for development), Git installed, a modern text editor (like VS Code with Pine Script extensions).
-        *   **Setup Steps:** 1. Clone the repository. 2. Open the project in a text editor. 3. Copy-paste script code into the TradingView Pine Editor to apply to charts for testing.
+*   **Prerequisites:**
+    *   A Unix-like command-line environment (e.g., macOS, Linux, or WSL on Windows).
+    *   Standard core utilities must be installed and available in the system's `PATH`.
+    *   Git for version control.
+*   **Setup Steps:**
+    1.  Clone the `core-privatize-folders` repository from GitHub.
+    2.  No package installation or dependency management is required.
+    3.  Ensure the main script is executable (`chmod +x scripts/privatize-folders.sh`).
 
 ## 3. Technical Constraints
 List known technical limitations.
 
-* [Enter technical constraints here]
-
-*   **Example: Project A**
-        *   Reliance on specific AI tools and extensions.
-        *   Potential for redundancy in auto-generated rules.
-        *   The boilerplate may become outdated quickly due to the rapid evolution of AI technologies.
-        *   The memory bank has a current limit of 2M tokens of context.
-    *   **Example: Project B**
-        *   Pine Script execution limits (e.g., memory, number of plots).
-        *   No ability to import external data sources or libraries beyond the script itself.
-        *   All code for a single indicator must be in one file.
+*   **Platform Dependency:** The script is fundamentally dependent on a `bash` shell and standard Unix utilities. It will not run in native Windows environments like CMD or PowerShell.
+*   **File System Requirements:** The script assumes the underlying file system supports symbolic links, which may be a constraint on some older or non-standard file systems.
+*   **Tool Behavior Variance:** The behavior of core utilities can differ between platforms (e.g., the `-i` flag for `sed` on macOS/BSD vs. GNU/Linux). The script must account for these differences to ensure portability.
 
 ## 4. Dependencies & Integrations (Technical Details)
 Key technical details for dependencies/integrations.
 
-* [Enter dependencies and integrations here]
-
-*   **Example: Project A**
-    *   **Dependency 1:** vibe-tools
-        *   vibe-tools provides a set of CLI tools for interacting with AI providers.
-    *   **Dependency 2:** SpecStory
-        *   SpecStory is a Cursor extension that automatically saves AI interactions.
-*   **Example: Project B**
-    *   **Dependency 1:** TradingView Platform. The scripts are entirely dependent on the TradingView charting environment and its Pine Script API.
+*   **Dependency 1:** `bash`
+    *   The script requires a reasonably modern version of the Bash shell to run.
+*   **Dependency 2:** Core Unix Utilities
+    *   The script relies on the presence and standard behavior of `mv`, `ln`, `mkdir`, `grep`, `sed`, `find`.
+*   **Integration 1:** File System
+    *   The script's primary function is to directly manipulate the file system by moving directories and creating symbolic links.
+*   **Integration 2:** Git
+    *   The script integrates with the Git version control system by reading from and writing to the `.gitignore` file.
 
 ## 5. Code & Branching Strategy
 Describe the version control system, branching model, and code review process.
 
-* [Enter version control system, branching model, and code review process here]
-
-*   **Example: Project A**
-    *   **VCS:** Git
-    *   **Hosting:** GitHub
-    *   **Branching Model:** GitHub Flow
-    *   **Code Review:** Pull requests
-    *   **Commit Messages:** Conventional Commits
-*   **Example: Project B**
-    *   **VCS:** Git
-    *   **Hosting:** GitHub
-    *   **Branching Model:** Feature Branch Workflow (e.g., `feature/indicator-name`).
-    *   **Code Review:** Pull requests for all changes to the `main` branch.
-    *   **Commit Messages:** Conventional Commits standard.
+*   **VCS:** Git
+*   **Hosting:** GitHub
+*   **Branching Model:** Standard GitHub Flow (create feature branches from `main`, open pull requests to merge back into `main`).
+*   **Code Review:** All changes should be submitted via pull requests for review.
+*   **Commit Messages:** Adherence to the Conventional Commits standard is encouraged for clear and automated changelog generation.
 
 ## 6. Build & Deployment Process
 Describe the build process, deployment pipeline, and hosting environment.
 
-* [Enter build and deployment process here]
-
-*   **Example: Project A** N/A - This boilerplate does not include a build or deployment process.
-*   **Example: Project B** N/A - Deployment is manual. The developer copies the final script code and publishes it as a "Protected" or "Invite-Only" script on the TradingView platform.
+*   **Build Process:** N/A. As a shell script, there is no build or compilation step.
+*   **Deployment Process:** This is a utility repository, not a deployed service. "Deployment" consists of cloning the repository to a local machine where the script can be executed against other local project directories.
 
 ---
 **How to Use This File Effectively:**

@@ -11,112 +11,65 @@ summary: The problem, proposed solution, and user experience goals.
 
 *   **Problem being solved for target audience?** *(Be specific)*
 
-    * [Enter problem statement here]
-
-    *   **Example: Project A** Developers waste time and effort setting up new projects with the same basic configurations, integrations, and best practices. This often leads to inconsistencies across projects and hinders productivity.
-    *   **Example: Project B** Traders often struggle with cluttered charts and inconsistent indicators that are difficult to interpret and customize. This leads to analysis paralysis and a lack of confidence in their toolset.
+    *   When developers set up a new project from a public boilerplate, they must manually separate private, context-specific folders (e.g., `.cursor`, `.specstory`, `memory-bank`, `inbox`) from the public repository. This manual process is tedious, repetitive, and highly prone to error, such as incorrect symlink creation or forgetting to update `.gitignore`, which can lead to accidental commits of sensitive information.
 
 *   **Importance/benefits of solving it?**
 
-    * [Enter benefits statement here]
-
-    *   **Example: Project A** Solving this problem allows developers to focus on the unique aspects of their projects, accelerate development cycles, and ensure consistent application of best practices across all projects.
-    *   **Example: Project B** Providing a suite of clean, performant, and well-documented indicators with a consistent design language allows traders to build a clear and personalized analytical environment, leading to more efficient and confident decision-making.
+    *   Automating this process dramatically improves developer efficiency and reduces setup time. It ensures a consistent, reliable, and secure separation of public and private assets across all projects, eliminating a common source of errors and enforcing a critical architectural pattern within the development framework.
 
 ## 2. Proposed Solution
 
 *   **How will this project solve the problem(s)?** *(Core concept)*
 
-    * [Enter proposed solution here]
-
-    *   **Example: Project A** This project provides a pre-configured boilerplate for new projects in the Cursor IDE, with a strong emphasis on AI-assisted development. It includes a structured directory structure, integration with AI tools and extensions, coding standards, and documentation.
-    *   **Example: Project B** Develop a suite of indicators built around a shared library of reusable components and a consistent design philosophy. The focus is on technical robustness, performance, and high-quality user-centric visualization.
+    *   This project provides a dedicated, reusable Bash script named `privatize-folders.sh`. The script is designed to be run as the final step in a new project setup workflow. It reads a configuration file listing folders to be privatized, moves them to an adjacent private directory, creates relative symlinks, and updates `.gitignore` automatically.
 
 *   **Key features delivering the solution?**
 
-    * [Enter key features here]
-
-    *   **Example: Project A**
-        *   Pre-configured directory structure
-        *   Integration with AI tools and extensions
-        *   Coding standards and best practices
-        *   Documentation of the project structure and development workflow
-        *   Examples of AI-assisted development workflows
-        *   Memory bank system for improved project context and AI continuity
-    *   **Example: Project B**
-        *   A library of shared Pine Script functions.
-        *   High-clarity visual outputs based on data viz best practices.
-        *   A standardized framework for user customization.
-        *   Comprehensive technical documentation for each script.
+    *   **Configurable Folder List:** A simple text file defines which folders to privatize, making the script adaptable to different boilerplates.
+    *   **Automated File Operations:** Moves existing folders or creates them if they don't exist in the target private location.
+    *   **Relative Symlink Creation:** Ensures the project structure remains portable.
+    *   **Intelligent `.gitignore` Management:** Checks for and updates `.gitignore` to exclude the new symlinks, preventing accidental commits.
+    *   **CLI-Driven:** Operates non-interactively via command-line arguments for source and target paths.
+    *   **Consistent Tooling:** Mirrors the logging, locking, and output style of its sibling script, `apply-boilerplate.sh`.
 
 ## 3. How It Should Work (User Experience Goals)
 
 *   **Ideal user experience?** *(What should it feel like?)*
 
-    * [Enter ideal user experience here]
-
-    *   **Example: Project A** The user should be able to create a new project from the boilerplate with minimal effort and be immediately productive. The boilerplate should provide a clear and intuitive starting point for development, with all the necessary tools and configurations in place.
-    *   **Example: Project B** The user should feel empowered by their tools. The indicators should feel responsive, intuitive to read, and easy to customize. The documentation should be clear enough to foster a deep understanding of how the tool works.
+    *   The experience should be simple, fast, and reliable. The developer runs a single command and can trust that the folder privatization is handled correctly without any need for manual verification or cleanup. It should feel like a seamless, "fire-and-forget" part of the setup process.
 
 *   **Non-negotiable UX principles?**
 
-    * [Enter non-negotiable UX principles here]
-
-    *   **Example: Project A**
-        *   Simplicity: The boilerplate should be easy to use and understand, even for developers who are new to AI-assisted development.
-        *   Consistency: The boilerplate should enforce consistent coding standards and best practices across all projects.
-        *   Flexibility: The boilerplate should be easily customizable and adaptable to different project types.
-    *   **Example: Project B**
-        *   **Clarity:** Visual outputs must be immediately interpretable.
-        *   **Performance:** Indicators must not lag or slow down the user's charting experience.
-        *   **Consistency:** All indicators in the suite must share a common design language and user interaction model.
+    *   **Reliability:** The script must work flawlessly every time. Its operations must be atomic and correct.
+    *   **Clarity:** Terminal output must be informative, clearly stating what actions were taken and confirming success.
+    *   **Flexibility:** The script must be easily adaptable to different boilerplates and project needs through its configuration file.
 
 ## 4. Unique Selling Proposition (USP)
 
 *   **What makes this different or better than existing solutions?**
 
-    * [Enter USP here]
-
-    *   **Example: Project A** This boilerplate is specifically designed for AI-assisted development in the Cursor IDE, leveraging AI tools and a memory bank system to ensure development continuity and efficiency.
-    *   **Example: Project B** This is not a "black box" signal system. It is a suite of transparent, well-engineered, and artfully designed analytical tools for traders who value process and understanding over hype.
+    *   This is not a generic script but a purpose-built utility designed as a key component of a larger, opinionated development workflow. Its tight integration and shared conventions with the `apply-boilerplate.sh` script make it a natural and efficient tool for its specific context, rather than a solution that needs to be adapted.
 
 *   **Core value proposition for the user?**
 
-    * [Enter core value proposition here]
-
-    *   **Example: Project A** Faster development cycles, consistent application of best practices, and improved project context and AI continuity.
-    *   **Example: Project B** A clear, consistent, and performant analytical toolset that fosters understanding and confidence, enabling a more disciplined trading process.
+    *   It provides a fully automated, reliable solution for the critical "last-mile" setup task of separating public and private code, enforcing security and architectural best practices with zero manual effort.
 
 ## 5. Assumptions About Users
 
 *   **Assumptions about users' tech skills, motivations, technology access?**
 
-    * [Enter assumptions here]
-
-    *   **Example: Project A**
-        *   Users are familiar with the Cursor IDE and basic software development concepts.
-        *   Users have access to the necessary API keys and accounts for AI tools and extensions.
-        *   Users are motivated to adopt a structured development workflow and follow coding standards.
-        *   Users have access to a computer with internet access to download and install the required software.
-    *   **Example: Project B**
-        *   Users are familiar with the TradingView platform.
-        *   Users value clear data visualization and are willing to read documentation to understand their tools.
-        *   Users want to build a personalized analytical process, not just consume signals.
+    *   Users are developers working in a Unix-like environment (macOS, Linux).
+    *   Users are comfortable with the command line.
+    *   Users are following the established framework workflow where this script is the third step (Submodule -> Apply Boilerplate -> Privatize Folders).
+    *   The project directory structure consists of a public Git repository located adjacent to a private directory (e.g., `.../public-repo/` and `.../private/`).
 
 ## 6. Success Metrics (Product-Focused)
 
 *   **How to measure product's success in solving user problems?** *(User-centric KPIs)*
 
-    * [Enter success metrics here]
-
-    *   **Example: Project A**
-        *   Time to first commit: How quickly can users start developing after creating a new project from the boilerplate?
-        *   Number of projects started from the boilerplate: How many users are adopting the boilerplate for new projects?
-        *   User satisfaction score: How satisfied are users with the boilerplate?
-    *   **Example: Project B**
-        *   Adoption rate of the shared component library across the suite.
-        *   Positive user feedback on documentation clarity and visual design.
-        *   Low number of support requests related to basic indicator usage.
+    *   **Adoption Rate:** The script is consistently used as the standard procedure for all new project setups.
+    *   **Reliability:** A near-zero rate of manual corrections or interventions required after the script is run.
+    *   **Efficiency:** A measurable reduction in the time and cognitive load required for new project initialization.
 
 ---
 **How to Use This File Effectively:**
