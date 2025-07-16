@@ -2,7 +2,7 @@
 
 This repository contains the `privatize-folders.sh` script, a utility designed to automate the separation of public and private assets within a project structure. It works by moving specified folders to an adjacent private directory, creating relative symbolic links in their original locations, and ensuring the new symlinks are correctly ignored by Git.
 
-This script is a key component in the project setup workflow and is a companion utility to `apply-boilerplate.sh`.
+This script is a key component in the project setup workflow and is a companion utility to `core-apply-boilerplate.sh`.
 
 ## The "Private Context" Philosophy
 
