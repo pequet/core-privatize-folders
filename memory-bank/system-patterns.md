@@ -55,7 +55,7 @@ Describe how major components interact.
 
 *   **Data Schema Overview/Link:**
 
-    *   The data schema is that of the configuration file: a newline-separated list of folder names. Lines beginning with `#` are ignored as comments.
+    *   The data schema is that of the configuration file (e.g., `default.config`): a newline-separated list of folder names. Lines beginning with `#` are ignored as comments.
 
 *   **Data Caching Strategies:**
 

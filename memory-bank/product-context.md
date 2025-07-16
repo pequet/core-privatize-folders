@@ -25,7 +25,7 @@ summary: The problem, proposed solution, and user experience goals.
 
 *   **Key features delivering the solution?**
 
-    *   **Configurable Folder List:** A simple text file defines which folders to privatize, making the script adaptable to different boilerplates.
+    *   **Configurable Folder List:** A simple `default.config` text file defines which folders to privatize, and this can be overridden with a custom file, making the script adaptable.
     *   **Automated File Operations:** Moves existing folders or creates them if they don't exist in the target private location.
     *   **Relative Symlink Creation:** Ensures the project structure remains portable.
     *   **Intelligent `.gitignore` Management:** Checks for and updates `.gitignore` to exclude the new symlinks, preventing accidental commits.

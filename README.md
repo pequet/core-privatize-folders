@@ -32,9 +32,9 @@ The script is non-interactive and driven by command-line arguments and a configu
 
 ### Configuration File
 
-The list of folders to be privatized is defined in a simple text file. By default, the script looks for `privatize.config`, but a custom name can be specified.
+The list of folders to be privatized is defined in a simple text file. By default, the script looks for `default.config` in its own directory.
 
-**Example `privatize.config`:**
+**Example `default.config`:**
 ```
 # Folders to privatize
 .cursor
@@ -66,13 +66,13 @@ Specify a custom configuration file name:
 
 *   `-s, --source <path>`: **(Required)** The path to the public repository where the folders currently reside.
 *   `-p, --private <path>`: **(Required)** The path to the adjacent directory where folders should be moved.
-*   `-c, --config <name>`: **(Optional)** The name of a specific configuration file to use (e.g., `project-template.config`). If omitted, it defaults to `privatize.config`.
+*   `-c, --config <name>`: **(Optional)** The name of a specific configuration to use (e.g., `cursor_project`). If this flag is used, the script will look for `<name>.config` and will exit with an error if it is not found. If omitted, it defaults to `default.config`.
 
 ## Advanced Usage: Private Context
 
 This script is the implementation of the "Private Context" concept. By moving context-heavy directories like `.cursor` and `memory-bank` to a private location and replacing them with symlinks, you can maintain a clean separation between your public, shareable code and your private, session-specific development environment.
 
-This allows you to safely manage public-facing boilerplates or open-source projects without exposing your development history, AI conversations, or other sensitive information.
+This allows you to safely manage public-facing boilerplates or open-source projects without exposing your development history, AI conversations, or other sensitive information. Furthermore, it solves a key version control problem: if these folders were simply added to `.gitignore` in the public repository, their contents would not be tracked by Git at all. By moving them to an adjacent private repository, this script enables that private repository to track their contents, preserving their history while keeping them out of the public submodule.
 
 ## License
 

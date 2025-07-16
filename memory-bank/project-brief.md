@@ -20,7 +20,7 @@ summary: Core project goals, requirements, and scope.
 What must the project do at a minimum? List the essential features and functionalities.
 
 *   **Requirement 1:** Accept source (public) and target (private) directory paths as command-line arguments.
-*   **Requirement 2:** Read a list of folder names to be privatized from a specified or default configuration file.
+*   **Requirement 2:** Read a list of folder names to be privatized from a specified (`<name>.config`) or default (`default.config`) configuration file.
 *   **Requirement 3:** For each folder in the list, move it from the source to the target directory. If it doesn't exist in the source, create it in the target.
 *   **Requirement 4:** Create a relative symbolic link in the source directory pointing to the folder's new location in the target directory.
 *   **Requirement 5:** Intelligently update the `.gitignore` file in the source directory to ensure the new symlinks are ignored.
