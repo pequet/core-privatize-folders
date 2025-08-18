@@ -35,7 +35,7 @@ Root/
 
 ### Locating This Repository
 
-Putting it all together, this public repository (`core-privatize-folders/`) is a `View` within the `Core` Project.
+Putting it all together, this public repository (`core-privatize-folders/`) is a `Method` within the `Core` Project.
 
 ```text
 Core/
