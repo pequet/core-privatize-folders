@@ -29,9 +29,17 @@ VENV/
 
 # IDE specific (including symlinks)
 # Should be commented out i.e. included in the boilerplate but **usually not** in the project
-.cursor
+AGENTS.md
+CLAUDE.md
+.claude
+.codex
+.cursor  
+.github 
 .vscode
-.cursor/
+.claude/
+.codex/
+.cursor/ 
+.github/  
 .vscode/
 
 # Build artifacts
