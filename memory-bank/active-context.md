@@ -1,7 +1,7 @@
 ---
 type: overview
 domain: system-state
-subject: Core Privatize Folders
+subject: Privatize Folders
 status: active
 summary: Current work focus, recent changes, and next steps.
 ---

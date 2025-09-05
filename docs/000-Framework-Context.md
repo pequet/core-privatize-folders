@@ -1,7 +1,7 @@
 ---
 type: guide
 domain: methods
-subject: Core Privatize Folders
+subject: Privatize Folders
 status: active
 tags: notes-active
 summary: "Explains the boilerplate's context within the parent framework."

@@ -1,7 +1,7 @@
 ---
 type: log
 domain: system-state
-subject: Core Privatize Folders
+subject: Privatize Folders
 status: active
 summary: Chronological log of development activities. New entries must be at the top.
 ---
